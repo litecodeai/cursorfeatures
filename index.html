@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      Comprehensive and Succinct List of Cursor Features (Unofficial Fan
-      Resource)
+      Comprehensive and Succinct List of Cursor Features
     </title>
     <!-- UIkit CSS -->
     <link
@@ -30,85 +29,8 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .full-height-container {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100%;
-        overflow-x: hidden;
-      }
-      .table-wrapper {
-        overflow: auto;
-        padding: 20px;
-        box-sizing: border-box;
-        height: 100vh;
-      }
-
-      #myTable th,
-      #myTable td {
-        white-space: nowrap;
-        border: 1px solid #e5e5e5;
-        padding: 8px;
-      }
-      #myTable th {
-        background-color: #f8f8f8;
-      }
-
-      .page-title {
-        margin: 20px 20px 0px 20px;
-        font-size: 24px;
-        background-color: rgb(0 0 0);
-        padding: 20px;
-        border-radius: 5px;
-        color: #eee;
-      }
-
-      .tagline {
-        margin: 10px 20px;
-        padding: 5px 5px 5px 20px;
-        background-color: #eee;
-        border-radius: 5px;
-        color: #000;
-      }
-
-      .sortable {
-        cursor: pointer;
-      }
-      .sortable::after {
-        content: " ↕";
-        font-size: 0.8em;
-      }
-      .sortable.asc::after {
-        content: " ↑";
-      }
-      .sortable.desc::after {
-        content: " ↓";
-      }
-
-      .filter-container {
-        margin: 5px 20px;
-        background: #000;
-        padding: 20px;
-        border-radius: 5px;
-      }
-
-      .centered_td {
-        text-align: center;
-      }
-
-      .uk-link, a {
-        text-decoration: underline;
-      }
-
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="uk-container-expand full-height-container">
@@ -116,16 +38,23 @@
         Comprehensive and Succinct List of Cursor Features
       </p>
       <p class="tagline">
-        Unoffocial resource created by a fan of
-        <a href="https://www.cursor.com" target="_blank">Cursor</a> ❤️🙌.
+        An unofficial resource created by a fan of
+        <a href="https://www.cursor.com" target="_blank">Cursor</a> - the AI first code editor❤️🙌.
       </p>
       <div class="filter-container">
-        <input
-          type="text"
-          class="uk-input uk-form-width-large column-filter"
-          data-column="0"
-          placeholder="filter entries by name..."
-        />
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="nameFilter"
+            class="column-filter"
+            data-column="0"
+            placeholder="filter entries by name..."
+          />
+          <button id="clearNameFilter" class="clear-button">&times;</button>
+        </div>
+        <p class="filter_instruction">
+          or filter and sort on the column titles below...
+        </p>
       </div>
       <div class="table-wrapper">
         <table
@@ -134,15 +63,78 @@
         >
           <thead>
             <tr>
-              <th class="sortable">Name</th>
-              <th class="sortable">Feature Source</th>
-              <th class="sortable">Type</th>
-              <th class="sortable">Related Cursor Functionality</th>
-              <th class="sortable">Keyboard Shortcut</th>
-              <th class="sortable">Description Added</th>
-              <th class="sortable">Description</th>
-              <th class="sortable">Screenshot</th>
-              <th class="sortable">Demonstration</th>
+              <th data-column="name" class="sortable">
+                <span class="header-content">Name</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                </div>
+              </th>
+              <th data-column="feature-source" class="sortable">
+                <span class="header-content">Feature Source</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                  <span
+                    class="icon-filter"
+                    data-filter-target="#feature-source-filter"
+                    >⚙️</span
+                  >
+                </div>
+              </th>
+              <th data-column="entry-type" class="sortable">
+                <span class="header-content">Entry Type</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                  <span class="icon-filter" data-filter-target="#type-filter"
+                    >⚙️</span
+                  >
+                </div>
+              </th>
+              <th data-column="related-functionality" class="sortable">
+                <span class="header-content">Related Cursor Functionality</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                  <span
+                    class="icon-filter"
+                    data-filter-target="#related-functionality-filter"
+                    >⚙️</span
+                  >
+                </div>
+              </th>
+              <th data-column="keyboard-shortcut" class="sortable">
+                <span class="header-content">Keyboard Shortcut</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                </div>
+              </th>
+              <th data-column="description-added" class="sortable">
+                <span class="header-content">Description Added</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                  <span
+                    class="icon-filter"
+                    data-filter-target="#description-added-filter"
+                    >⚙️</span
+                  >
+                </div>
+              </th>
+              <th data-column="description" class="sortable">
+                <span class="header-content">Description</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                </div>
+              </th>
+              <th data-column="screenshot" class="sortable">
+                <span class="header-content">Screenshot</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                </div>
+              </th>
+              <th data-column="demonstration" class="sortable">
+                <span class="header-content">Demonstration</span>
+                <div class="icon-container">
+                  <span class="icon-sort">↕</span>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -165,7 +157,7 @@
               <td>To be added</td>
             </tr>
             <tr>
-              <td>Panel Chat - Interpeter Mode</td>
+              <td>Panel Chat - Interpreter Mode</td>
               <td>Cursor</td>
               <td>Functionality</td>
               <td>Panel Chat</td>
@@ -181,10 +173,535 @@
               <td>To be added</td>
               <td>To be added</td>
             </tr>
+            <tr>
+              <td>In-Editor Code Generator</td>
+              <td>Cursor</td>
+              <td>Functionality</td>
+              <td>In-Editor Code Generator</td>
+              <td>Ctrl + K</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                For code generation: launches In-Editor code generator - if
+                existing, relevant code is highlighted it will be passed through
+                as context
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>In-Terminal Chat</td>
+              <td>Cursor</td>
+              <td>Functionality</td>
+              <td>In-Terminal Chat</td>
+              <td>Ctrl + K (from within terminal)</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                For terminal command generation: generates terminal commands in
+                response to natural language prompt
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Cursor</td>
+              <td>Functionality</td>
+              <td>Composer</td>
+              <td>Ctrl + I</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                For chat and multi-file creation and editing - launches
+                Composer, generates code suggestions across multiple files
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Open Command Palette</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + P</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Opens the command palette, once open type to search for the
+                required setting or action
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Open VS Code settings</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + ,</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Show VS Code settings</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Open Cursor settings</td>
+              <td>Cursor</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + J</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Show Cursor settings</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Cusror Settings > Models</td>
+              <td>Cursor</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                This area lets you specify available LLMs and any API keys you
+                want to use
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Move Chat to Editor tab</td>
+              <td>Cursor</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Click the 'Open Chat in Editor' icon to open chat in an editor
+                tab
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Terminal</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + `</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle the VS Code terminal</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Primary Side Bar</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + B</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Primary Side Bar</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Panel Chat</td>
+              <td>Cursor</td>
+              <td>UI Tip</td>
+              <td>Panel Chat</td>
+              <td>Ctrl + Alt + B</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Panel Chat</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Explorer</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + E</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Explorer panel</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Find</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + F</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Find panel</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Git</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + G</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Git panel</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Debug</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + D</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Debug panel</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Extensions</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + X</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggle Extensions panel</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Open folder</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + M + O</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Open Folder shortcut</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Toggle Word Wrap</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Alt + Z</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Toggles word wrap in your editor</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Save All</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-warning">NO</span>
+              </td>
+              <td>
+                Visible in Composer tab before accepting a code suggestion,
+                don't know what it does
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Save</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-warning">NO</span>
+              </td>
+              <td>
+                Visible in suggested code tab before accepting a code
+                suggestion, don't know what it does
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Reapply All</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-warning">NO</span>
+              </td>
+              <td>
+                Visible in Composer tab before accepting a code suggestion,
+                don't know what it does
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Reapply</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-warning">NO</span>
+              </td>
+              <td>
+                Visible in suggested code tab before accepting a code
+                suggestion, don't know what it does
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Reject All</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Visible in Composer tab before accepting a code suggestion,
+                rejects all suggested code changes
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Reject</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Visible in suggested code tab before accepting a code
+                suggestion, rejects suggested code changes relevant to the
+                indivudual file
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Accept All</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Visible in Composer tab before accepting a code suggestion,
+                accepts all suggested code changes
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Accept</td>
+              <td>Cursor</td>
+              <td>Button</td>
+              <td>Composer</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Visible in suggested code tab before accepting a code
+                suggestion, accepts suggested code changes relevant to the
+                indivudual file
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Git Clone</td>
+              <td>VS Code</td>
+              <td>UI Tip</td>
+              <td>N/A</td>
+              <td>Ctrl + Shift + P and type Git Clone</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>Show Git clone prompts</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>What is Cursor?</td>
+              <td>N/A</td>
+              <td>FAQ</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                Cursor is a fork of VS Code which has additional built in AI
+                features
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>Who makes Cursor?</td>
+              <td>N/A</td>
+              <td>FAQ</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td><a href="https://anysphere.inc">https://anysphere.inc</a></td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>What is an LLM?</td>
+              <td>N/A</td>
+              <td>FAQ</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>LLM is the acronym for Large Language Model</td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
+            <tr>
+              <td>What LLM's does Cursor support?</td>
+              <td>N/A</td>
+              <td>FAQ</td>
+              <td>N/A</td>
+              <td>N/A</td>
+              <td class="centered_td">
+                <span class="uk-label uk-label-success">YES</span>
+              </td>
+              <td>
+                GPT-4, GPT-4o, claude-3-opus, cursor-small, gpt-3.5-turbo,
+                gpt-4-turbo-2024-04-09, claude-3.5-sonnet, gpt-4o-mini
+              </td>
+              <td>To be added</td>
+              <td>To be added</td>
+            </tr>
             <!-- Add more rows as needed -->
           </tbody>
         </table>
       </div>
+    </div>
+
+    <div id="feature-source-filter" class="filter-options" data-column="feature-source" hidden>
+      <ul>
+        <li>
+          <label><input type="checkbox" value="Cursor" /> Cursor</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="VS Code" /> VS Code</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="N/A" /> N/A</label>
+        </li>
+      </ul>
+    </div>
+
+    <div id="type-filter" class="filter-options" data-column="entry-type" hidden>
+      <ul>
+        <li>
+          <label
+            ><input type="checkbox" value="Functionality" />
+            Functionality</label
+          >
+        </li>
+        <li>
+          <label><input type="checkbox" value="UI Tip" /> UI Tip</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="Button" /> Button</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="FAQ" /> FAQ</label>
+        </li>
+      </ul>
+    </div>
+
+    <div id="related-functionality-filter" class="filter-options" data-column="related-functionality" hidden>
+      <ul>
+        <li>
+          <label><input type="checkbox" value="Panel Chat" /> Panel Chat</label>
+        </li>
+        <li>
+          <label
+            ><input type="checkbox" value="In-Editor Code Generator" />
+            In-Editor Code Generator</label
+          >
+        </li>
+        <li>
+          <label
+            ><input type="checkbox" value="In-Terminal Chat" /> In-Terminal
+            Chat</label
+          >
+        </li>
+        <li>
+          <label><input type="checkbox" value="Composer" /> Composer</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="N/A" /> N/A</label>
+        </li>
+      </ul>
+    </div>
+
+    <div id="description-added-filter" class="filter-options" data-column="description-added" hidden>
+      <ul>
+        <li>
+          <label><input type="checkbox" value="YES" /> YES</label>
+        </li>
+        <li>
+          <label><input type="checkbox" value="NO" /> NO</label>
+        </li>
+      </ul>
     </div>
 
     <script>
@@ -193,11 +710,13 @@
         const headers = table.querySelectorAll("th");
         const tableBody = table.querySelector("tbody");
         const rows = tableBody.querySelectorAll("tr");
+        const nameFilter = document.getElementById("nameFilter");
+        const clearNameFilter = document.getElementById("clearNameFilter");
 
         // Sort function
-        const sortColumn = (index) => {
-          const type = headers[index].textContent.toLowerCase();
-          const isAsc = headers[index].classList.contains("asc");
+        const sortColumn = (header) => {
+          const index = Array.from(headers).indexOf(header);
+          const isAsc = header.classList.contains("asc");
           const direction = isAsc ? -1 : 1;
           const sortedRows = Array.from(rows).sort((a, b) => {
             const aColText = a
@@ -218,38 +737,185 @@
           tableBody.append(...sortedRows);
 
           // Update header classes
-          headers.forEach((header) => header.classList.remove("asc", "desc"));
-          headers[index].classList.toggle("asc", !isAsc);
-          headers[index].classList.toggle("desc", isAsc);
+          headers.forEach((h) => h.classList.remove("asc", "desc"));
+          header.classList.toggle("asc", !isAsc);
+          header.classList.toggle("desc", isAsc);
         };
 
-        // Add click event to headers
-        headers.forEach((header, index) => {
-          header.addEventListener("click", () => {
-            sortColumn(index);
+        // Add click event to sort icons
+        const sortIcons = table.querySelectorAll(".icon-sort");
+        sortIcons.forEach((icon) => {
+          icon.addEventListener("click", (event) => {
+            const header = event.target.closest("th");
+            sortColumn(header);
+            event.stopPropagation();
           });
         });
 
-        // Filtering functionality
-        const columnFilters = document.querySelectorAll(".column-filter");
-        const filterTable = () => {
-          rows.forEach((row) => {
-            let display = "";
-            columnFilters.forEach((filter) => {
-              const column = filter.dataset.column;
-              const filterValue = filter.value.toLowerCase();
-              const cellText = row.cells[column].textContent.toLowerCase();
-              if (!cellText.includes(filterValue)) {
-                display = "none";
+        // Function to close all filter options
+        function closeAllFilterOptions() {
+          document.querySelectorAll(".filter-options").forEach((options) => {
+            options.hidden = true;
+          });
+        }
+
+        // Close filter options when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            !event.target.closest(".filter-options") &&
+            !event.target.closest(".icon-filter")
+          ) {
+            closeAllFilterOptions();
+          }
+        });
+
+        // Close filter options when scrolling horizontally
+        const tableWrapper = document.querySelector(".table-wrapper");
+        tableWrapper.addEventListener("scroll", function () {
+          closeAllFilterOptions();
+        });
+
+        // Handle filter icon clicks
+        const filterIcons = document.querySelectorAll(".icon-filter");
+        filterIcons.forEach((icon) => {
+          icon.addEventListener("click", function (event) {
+            event.stopPropagation();
+            const targetId = this.getAttribute("data-filter-target");
+            const targetOptions = document.querySelector(targetId);
+
+            // Toggle the visibility of the clicked filter options
+            if (targetOptions) {
+              targetOptions.hidden = !targetOptions.hidden;
+
+              // Hide all other filter options
+              document
+                .querySelectorAll(".filter-options")
+                .forEach((options) => {
+                  if (options !== targetOptions) {
+                    options.hidden = true;
+                  }
+                });
+
+              // Position the filter options if it's being shown
+              if (!targetOptions.hidden) {
+                const iconRect = this.getBoundingClientRect();
+                targetOptions.style.top = `${
+                  iconRect.bottom + window.scrollY
+                }px`;
+                targetOptions.style.left = `${
+                  iconRect.left + window.scrollX
+                }px`;
+              }
+            }
+          });
+        });
+
+        // Add event listener for name filter input
+        nameFilter.addEventListener("input", filterTable);
+
+        function filterTable() {
+          const nameFilterValue = nameFilter.value.toLowerCase();
+          const filters = {};
+          const columns = Array.from(table.querySelectorAll("th[data-column]"));
+
+          document
+            .querySelectorAll(".filter-options[data-column]")
+            .forEach((filterOption) => {
+              const columnName = filterOption.dataset.column;
+              const columnIndex = columns.findIndex(col => col.dataset.column === columnName);
+              
+              console.log(`Filter option: ${filterOption.id}, Column name: ${columnName}, Column index: ${columnIndex}`);
+              
+              if (columnIndex !== -1) {
+                const checkedValues = Array.from(
+                  filterOption.querySelectorAll(
+                    'input[type="checkbox"]:checked'
+                  )
+                ).map((checkbox) => checkbox.value);
+                console.log(`Checked values for ${columnName}:`, checkedValues);
+                if (checkedValues.length > 0) {
+                  filters[columnIndex] = checkedValues;
+                }
+              } else {
+                console.error(`Column not found for ${columnName}`);
               }
             });
-            row.style.display = display;
-          });
-        };
 
-        columnFilters.forEach((filter) =>
-          filter.addEventListener("input", filterTable)
-        );
+          console.log("Filters:", filters);
+
+          rows.forEach((row) => {
+            let display = true;
+            const nameCell = row.cells[0].textContent.toLowerCase();
+
+            // Check name filter
+            if (nameFilterValue && !nameCell.includes(nameFilterValue)) {
+              display = false;
+            }
+
+            // Check other filters
+            Object.entries(filters).forEach(([columnIndex, values]) => {
+              const cellValue = row.cells[columnIndex].textContent.trim();
+              if (values.length > 0 && !values.includes(cellValue)) {
+                display = false;
+              }
+            });
+
+            row.style.display = display ? "" : "none";
+          });
+
+          updateAllFilterIconColors();
+        }
+
+        // Add event listener for clearing the name filter
+        clearNameFilter.addEventListener("click", function(event) {
+          event.preventDefault();
+          nameFilter.value = "";
+          filterTable();
+          this.style.display = "none"; // Hide the clear button after clearing
+        });
+
+        // Show/hide clear icon based on input content
+        nameFilter.addEventListener("input", function() {
+          clearNameFilter.style.display = this.value ? "block" : "none";
+        });
+
+        // Initially hide the clear icon
+        clearNameFilter.style.display = "none";
+
+        // Add event listeners for checkbox changes
+        document.querySelectorAll('.filter-options input[type="checkbox"]').forEach((checkbox) => {
+          checkbox.addEventListener('change', filterTable);
+        });
+
+        function updateFilterIconColor(filterOptionsId) {
+          const filterIcon = document.querySelector(`[data-filter-target="#${filterOptionsId}"]`);
+          const filterOptions = document.getElementById(filterOptionsId);
+          const checkedBoxes = filterOptions.querySelectorAll('input[type="checkbox"]:checked');
+          
+          if (checkedBoxes.length > 0) {
+            filterIcon.classList.add('active');
+          } else {
+            filterIcon.classList.remove('active');
+          }
+        }
+
+        // Modify the existing checkbox event listeners
+        document.querySelectorAll('.filter-options input[type="checkbox"]').forEach((checkbox) => {
+          checkbox.addEventListener('change', function() {
+            filterTable();
+            updateFilterIconColor(this.closest('.filter-options').id);
+          });
+        });
+
+        // Add a function to update all filter icon colors
+        function updateAllFilterIconColors() {
+          document.querySelectorAll('.filter-options').forEach((filterOptions) => {
+            updateFilterIconColor(filterOptions.id);
+          });
+        }
+
+        // Call this function after the initial page load
+        updateAllFilterIconColors();
       });
     </script>
   </body>

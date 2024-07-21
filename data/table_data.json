@@ -1,0 +1,548 @@
+[
+  {
+    "name": "Chat: Normal Mode",
+    "feature_source": "Cursor",
+    "entry_type": "Functionality",
+    "related_functionality": "Chat",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>L</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "For chat and code generation: launches Cursor Chat in a panel - if existing, relevant code is highlighted it will be passed through as context",
+    "screenshot": "<a href='#' data-target-id='feature01-screenshot' class='open-lightbox'>To be added</a>",
+    "demonstration": "<a href='#' data-target-id='feature01-demo' class='open-lightbox'>To be added</a>"
+  },
+  {
+    "name": "Chat: Interpreter Mode",
+    "feature_source": "Cursor",
+    "entry_type": "Functionality",
+    "related_functionality": "Chat",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>L</code> and select 'Interpreter Mode'",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "For chat and executable Python code generation: responses include executable Python code, requires installation of Python and Jupyter extensions",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Code Generator: In-Editor",
+    "feature_source": "Cursor",
+    "entry_type": "Functionality",
+    "related_functionality": "Code Generator: In-Editor",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>K</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "For code generation: launches In-Editor code generator - if existing, relevant code is highlighted it will be passed through as context",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Command Generator: In-Terminal",
+    "feature_source": "Cursor",
+    "entry_type": "Functionality",
+    "related_functionality": "Command Generator: In-Terminal",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>K</code> (from within terminal)",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "For terminal command generation: generates terminal commands in response to natural language prompt",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Composer",
+    "feature_source": "Cursor",
+    "entry_type": "Functionality",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>I</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "For chat and multi-file creation and editing - launches Composer, generates code suggestions across multiple files",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Open Command Palette",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>P</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Opens the command palette, once open type to search for the required setting or action",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Open VS Code settings",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>,</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Show VS Code settings",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Open Cursor settings",
+    "feature_source": "Cursor",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>J</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Show Cursor settings",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Cursor Settings > Models",
+    "feature_source": "Cursor",
+    "entry_type": "Tip - Config",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "This area lets you specify available LLMs and any API keys you want to use",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Cursor Settings > Rules for AI",
+    "feature_source": "Cursor",
+    "entry_type": "Tip - Config",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "This area lets you specify rules to give the AI on all chats and Ctrl + K sessions",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Move Chat to Editor tab",
+    "feature_source": "Cursor",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Click the 'Open Chat in Editor' icon to open chat in an editor tab",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Terminal",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>`</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle the VS Code terminal",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Primary Side Bar",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>B</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Primary Side Bar",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Panel Chat",
+    "feature_source": "Cursor",
+    "entry_type": "Tip - UI",
+    "related_functionality": "Chat",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Alt</code> + <code>B</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Panel Chat",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Explorer",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>E</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Explorer panel",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Find",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>F</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Find panel",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Git",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>G</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Git panel",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Debug",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>D</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Debug panel",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Extensions",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>X</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggle Extensions panel",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Open folder",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>M</code> + <code>O</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Open Folder shortcut",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Toggle Word Wrap",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Alt</code> + <code>Z</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Toggles word wrap in your editor",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Matching Bracket",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>\\</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Jumps to matching bracket in JavaScript files.",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Unfold All",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>P</code> and type 'Unfold All'",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Expands all code blocks in your editor",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Save All",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "NO",
+      "value_class": "uk-label-warning"
+    },
+    "description": "Visible in Composer tab before accepting a code suggestion, don't know what it does",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Save",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "NO",
+      "value_class": "uk-label-warning"
+    },
+    "description": "Visible in suggested code tab before accepting a code suggestion, don't know what it does",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Reapply All",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "NO",
+      "value_class": "uk-label-warning"
+    },
+    "description": "Visible in Composer tab before accepting a code suggestion, don't know what it does",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Reapply",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "NO",
+      "value_class": "uk-label-warning"
+    },
+    "description": "Visible in suggested code tab before accepting a code suggestion, don't know what it does",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Reject All",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Visible in Composer tab before accepting a code suggestion, rejects all suggested code changes",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Reject",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Visible in suggested code tab before accepting a code suggestion, rejects suggested code changes relevant to the indivudual file",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Accept All",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Visible in Composer tab before accepting a code suggestion, accepts all suggested code changes",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Accept",
+    "feature_source": "Cursor",
+    "entry_type": "Button",
+    "related_functionality": "Composer",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Visible in suggested code tab before accepting a code suggestion, accepts suggested code changes relevant to the indivudual file",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Git Clone",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>Shift</code> + <code>P</code> and type 'Git Clone'",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Show Git clone prompts",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "What is Cursor?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Cursor is a fork of VS Code which has additional built in AI features",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Where is the Cursor changelog?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "<a href='https://changelog.cursor.sh' target='_blank'>https://changelog.cursor.sh</a>",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Who makes Cursor?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "<a href='https://anysphere.inc' target='_blank'>https://anysphere.inc</a>",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "What is an LLM?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "LLM is the acronym for Large Language Model",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "What LLM's does Cursor support?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "GPT-4, GPT-4o, claude-3-opus, cursor-small, gpt-3.5-turbo, gpt-4-turbo-2024-04-09, claude-3.5-sonnet, gpt-4o-mini",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "What LLM does Composer use?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "No",
+      "value_class": "uk-label-warning"
+    },
+    "description": "I don't know.",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "What is GitHub Copilot and Copilot ++?",
+    "feature_source": "N/A",
+    "entry_type": "FAQ",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "N/A",
+    "description_added": {
+      "status": "No",
+      "value_class": "uk-label-warning"
+    },
+    "description": "I don't know.",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  }
+]

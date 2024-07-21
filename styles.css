@@ -30,6 +30,7 @@ body {
 
 #myTable th {
   background-color: #f8f8f8;
+  height: 40px; /* Adjust this value as needed */
 }
 
 #myTable th:nth-child(1),  /* Name */
@@ -44,7 +45,7 @@ body {
 
 #myTable th:nth-child(3),  /* Type */
 #myTable td:nth-child(3) {
-  min-width: 145px;
+  min-width: 185px;
 }
 
 #myTable th:nth-child(4),  /* Related Cursor Functionality */
@@ -105,11 +106,13 @@ body {
 }
 
 .header-content {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   max-width: calc(100% - 50px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 100%; /* Ensure it takes full height of the th */
 }
 
 .icon-container {
@@ -119,13 +122,27 @@ body {
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+  gap: 10px; /* Add gap between flex items */
 }
 
 .icon-sort,
 .icon-filter {
   cursor: pointer;
-  margin-left: 5px;
   font-size: 0.8em;
+  display: flex; /* Make these flex containers */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  width: 20px; /* Set a fixed width */
+  height: 20px; /* Set a fixed height */
+}
+
+/* Remove the left margin from .icon-filter as we're using gap now */
+.icon-filter {
+  margin-left: 0;
+}
+
+.icon-filter i {
+  font-size: 14px; /* Adjust size as needed */
 }
 
 .icon-filter.active,
@@ -225,12 +242,10 @@ p.filter_instruction {
 
 .clear-button {
   position: absolute;
-  right: 5px;
+  right: -5px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
-  border: none;
-  font-size: 20px;
   cursor: pointer;
   display: none;
 }

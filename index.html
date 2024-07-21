@@ -3,9 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Comprehensive and Succinct List of Cursor Features
-    </title>
+    <title>Comprehensive and Succinct List of Cursor Features</title>
+
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!-- UIkit CSS -->
     <link
       rel="stylesheet"
@@ -30,7 +37,7 @@
     ></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="uk-container-expand full-height-container">
@@ -39,7 +46,8 @@
       </p>
       <p class="tagline">
         An unofficial resource created by a fan of
-        <a href="https://www.cursor.com" target="_blank">Cursor</a> - the AI first code editor❤️🙌.
+        <a href="https://www.cursor.com" target="_blank">Cursor</a> - the AI
+        first code editor❤️🙌.
       </p>
       <div class="filter-container">
         <div class="input-wrapper">
@@ -48,9 +56,9 @@
             id="nameFilter"
             class="column-filter"
             data-column="0"
-            placeholder="filter entries by name..."
+            placeholder="Filter entries by name..."
           />
-          <button id="clearNameFilter" class="clear-button">&times;</button>
+          <span id="clearNameFilter" class="clear-button" uk-icon="icon: close; ratio: 1"></span>
         </div>
         <p class="filter_instruction">
           or filter and sort on the column titles below...
@@ -66,73 +74,91 @@
               <th data-column="name" class="sortable">
                 <span class="header-content">Name</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="feature-source" class="sortable">
                 <span class="header-content">Feature Source</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                   <span
                     class="icon-filter"
                     data-filter-target="#feature-source-filter"
-                    >⚙️</span
-                  >
+                    ><span uk-icon="icon: cog; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="entry-type" class="sortable">
                 <span class="header-content">Entry Type</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                   <span class="icon-filter" data-filter-target="#type-filter"
-                    >⚙️</span
-                  >
+                    ><span uk-icon="icon: cog; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="related-functionality" class="sortable">
                 <span class="header-content">Related Cursor Functionality</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                   <span
                     class="icon-filter"
                     data-filter-target="#related-functionality-filter"
-                    >⚙️</span
-                  >
+                    ><span uk-icon="icon: cog; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="keyboard-shortcut" class="sortable">
                 <span class="header-content">Keyboard Shortcut</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="description-added" class="sortable">
                 <span class="header-content">Description Added</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                   <span
                     class="icon-filter"
                     data-filter-target="#description-added-filter"
-                    >⚙️</span
-                  >
+                    ><span uk-icon="icon: cog; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="description" class="sortable">
                 <span class="header-content">Description</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="screenshot" class="sortable">
                 <span class="header-content">Screenshot</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
               <th data-column="demonstration" class="sortable">
                 <span class="header-content">Demonstration</span>
                 <div class="icon-container">
-                  <span class="icon-sort">↕</span>
+                  <span class="icon-sort"
+                    ><span uk-icon="icon: chevron-up; ratio: .8"></span
+                  ></span>
                 </div>
               </th>
             </tr>
@@ -633,7 +659,12 @@
       </div>
     </div>
 
-    <div id="feature-source-filter" class="filter-options" data-column="feature-source" hidden>
+    <div
+      id="feature-source-filter"
+      class="filter-options"
+      data-column="feature-source"
+      hidden
+    >
       <ul>
         <li>
           <label><input type="checkbox" value="Cursor" /> Cursor</label>
@@ -647,7 +678,12 @@
       </ul>
     </div>
 
-    <div id="type-filter" class="filter-options" data-column="entry-type" hidden>
+    <div
+      id="type-filter"
+      class="filter-options"
+      data-column="entry-type"
+      hidden
+    >
       <ul>
         <li>
           <label
@@ -667,7 +703,12 @@
       </ul>
     </div>
 
-    <div id="related-functionality-filter" class="filter-options" data-column="related-functionality" hidden>
+    <div
+      id="related-functionality-filter"
+      class="filter-options"
+      data-column="related-functionality"
+      hidden
+    >
       <ul>
         <li>
           <label><input type="checkbox" value="Panel Chat" /> Panel Chat</label>
@@ -693,7 +734,12 @@
       </ul>
     </div>
 
-    <div id="description-added-filter" class="filter-options" data-column="description-added" hidden>
+    <div
+      id="description-added-filter"
+      class="filter-options"
+      data-column="description-added"
+      hidden
+    >
       <ul>
         <li>
           <label><input type="checkbox" value="YES" /> YES</label>
@@ -705,212 +751,188 @@
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const table = document.getElementById("myTable");
-        const headers = table.querySelectorAll("th");
-        const tableBody = table.querySelector("tbody");
-        const rows = tableBody.querySelectorAll("tr");
-        const nameFilter = document.getElementById("nameFilter");
-        const clearNameFilter = document.getElementById("clearNameFilter");
+      $(document).ready(function () {
+        const $table = $("#myTable"); // Select the table
+        const $headers = $table.find("th"); // Select all table headers
+        const $tableBody = $table.find("tbody"); // Select the table body
+        const $rows = $tableBody.find("tr"); // Select all table rows
+        const $nameFilter = $("#nameFilter"); // Select the name filter input
+        const $clearNameFilter = $("#clearNameFilter"); // Select the clear filter button
 
         // Sort function
-        const sortColumn = (header) => {
-          const index = Array.from(headers).indexOf(header);
-          const isAsc = header.classList.contains("asc");
-          const direction = isAsc ? -1 : 1;
-          const sortedRows = Array.from(rows).sort((a, b) => {
-            const aColText = a
-              .querySelector(`td:nth-child(${index + 1})`)
-              .textContent.trim();
-            const bColText = b
-              .querySelector(`td:nth-child(${index + 1})`)
-              .textContent.trim();
+        function sortColumn($header) {
+          const index = $headers.index($header); // Get the index of the clicked header
+          const isAsc = $header.hasClass("asc"); // Check if it's already sorted ascending
+          const direction = isAsc ? -1 : 1; // Determine sort direction
+
+          const sortedRows = $rows.toArray().sort((a, b) => {
+            const aColText = $(a).find(`td:eq(${index})`).text().trim();
+            const bColText = $(b).find(`td:eq(${index})`).text().trim();
             return aColText > bColText ? direction : -direction;
           });
 
-          // Remove all existing rows
-          while (tableBody.firstChild) {
-            tableBody.removeChild(tableBody.firstChild);
-          }
-
-          // Add sorted rows
-          tableBody.append(...sortedRows);
-
-          // Update header classes
-          headers.forEach((h) => h.classList.remove("asc", "desc"));
-          header.classList.toggle("asc", !isAsc);
-          header.classList.toggle("desc", isAsc);
-        };
+          $tableBody.empty().append(sortedRows); // Replace table body with sorted rows
+          $headers.removeClass("asc desc"); // Remove sort classes from all headers
+          $header.toggleClass("asc", !isAsc).toggleClass("desc", isAsc); // Add appropriate sort class
+        }
 
         // Add click event to sort icons
-        const sortIcons = table.querySelectorAll(".icon-sort");
-        sortIcons.forEach((icon) => {
-          icon.addEventListener("click", (event) => {
-            const header = event.target.closest("th");
-            sortColumn(header);
-            event.stopPropagation();
-          });
+        $(document).on("click", ".icon-sort", function (event) {
+          event.stopPropagation();
+          const $header = $(this).closest("th");
+          sortColumn($header);
+          toggleSortIcon($header);
         });
+
+        // Add this function to toggle the sort icon
+        function toggleSortIcon($header) {
+          const $icon = $header.find(".icon-sort span[uk-icon]");
+          const currentIcon = $icon.attr("uk-icon");
+
+          if (currentIcon.includes("chevron-up")) {
+            $icon.attr("uk-icon", "icon: chevron-down; ratio: .8");
+          } else {
+            $icon.attr("uk-icon", "icon: chevron-up; ratio: .8");
+          }
+        }
 
         // Function to close all filter options
         function closeAllFilterOptions() {
-          document.querySelectorAll(".filter-options").forEach((options) => {
-            options.hidden = true;
-          });
+          $(".filter-options").hide();
         }
 
         // Close filter options when clicking outside
-        document.addEventListener("click", function (event) {
+        $(document).on("click", function (event) {
           if (
-            !event.target.closest(".filter-options") &&
-            !event.target.closest(".icon-filter")
+            !$(event.target).closest(".filter-options, .icon-filter").length
           ) {
             closeAllFilterOptions();
           }
         });
 
         // Close filter options when scrolling horizontally
-        const tableWrapper = document.querySelector(".table-wrapper");
-        tableWrapper.addEventListener("scroll", function () {
-          closeAllFilterOptions();
-        });
+        $(".table-wrapper").on("scroll", closeAllFilterOptions);
 
         // Handle filter icon clicks
-        const filterIcons = document.querySelectorAll(".icon-filter");
-        filterIcons.forEach((icon) => {
-          icon.addEventListener("click", function (event) {
-            event.stopPropagation();
-            const targetId = this.getAttribute("data-filter-target");
-            const targetOptions = document.querySelector(targetId);
+        $(document).on("click", ".icon-filter", function (event) {
+          event.stopPropagation();
+          const targetId = $(this).data("filter-target");
+          const $targetOptions = $(targetId);
 
-            // Toggle the visibility of the clicked filter options
-            if (targetOptions) {
-              targetOptions.hidden = !targetOptions.hidden;
+          if ($targetOptions.length === 0) {
+            return;
+          }
 
-              // Hide all other filter options
-              document
-                .querySelectorAll(".filter-options")
-                .forEach((options) => {
-                  if (options !== targetOptions) {
-                    options.hidden = true;
-                  }
-                });
+          $(".filter-options").not($targetOptions).hide(); // Hide other filter options
+          $targetOptions.toggle(); // Toggle visibility of clicked filter options
 
-              // Position the filter options if it's being shown
-              if (!targetOptions.hidden) {
-                const iconRect = this.getBoundingClientRect();
-                targetOptions.style.top = `${
-                  iconRect.bottom + window.scrollY
-                }px`;
-                targetOptions.style.left = `${
-                  iconRect.left + window.scrollX
-                }px`;
+          if ($targetOptions.is(":visible")) {
+            const iconRect = this.getBoundingClientRect();
+            $targetOptions.css({
+              top: iconRect.bottom + window.scrollY + "px",
+              left: iconRect.left + window.scrollX + "px",
+              position: "absolute",
+              zIndex: 1000,
+            });
+          }
+        });
+
+        // Ensure filter options are initially hidden
+        $(".filter-options").hide();
+
+        // Remove 'hidden' attribute from filter options
+        $(".filter-options").removeAttr("hidden");
+
+        // Filter table function
+        function filterTable() {
+          const nameFilterValue = $nameFilter.val().toLowerCase();
+          const filters = {};
+
+          $(".filter-options[data-column]").each(function () {
+            const columnName = $(this).data("column");
+            const columnIndex = $headers
+              .filter(`[data-column="${columnName}"]`)
+              .index();
+
+            if (columnIndex !== -1) {
+              const checkedValues = $(this)
+                .find('input[type="checkbox"]:checked')
+                .map(function () {
+                  return $(this).val();
+                })
+                .get();
+
+              if (checkedValues.length > 0) {
+                filters[columnIndex] = checkedValues;
               }
             }
           });
-        });
 
-        // Add event listener for name filter input
-        nameFilter.addEventListener("input", filterTable);
-
-        function filterTable() {
-          const nameFilterValue = nameFilter.value.toLowerCase();
-          const filters = {};
-          const columns = Array.from(table.querySelectorAll("th[data-column]"));
-
-          document
-            .querySelectorAll(".filter-options[data-column]")
-            .forEach((filterOption) => {
-              const columnName = filterOption.dataset.column;
-              const columnIndex = columns.findIndex(col => col.dataset.column === columnName);
-              
-              console.log(`Filter option: ${filterOption.id}, Column name: ${columnName}, Column index: ${columnIndex}`);
-              
-              if (columnIndex !== -1) {
-                const checkedValues = Array.from(
-                  filterOption.querySelectorAll(
-                    'input[type="checkbox"]:checked'
-                  )
-                ).map((checkbox) => checkbox.value);
-                console.log(`Checked values for ${columnName}:`, checkedValues);
-                if (checkedValues.length > 0) {
-                  filters[columnIndex] = checkedValues;
-                }
-              } else {
-                console.error(`Column not found for ${columnName}`);
-              }
-            });
-
-          console.log("Filters:", filters);
-
-          rows.forEach((row) => {
+          $rows.each(function () {
             let display = true;
-            const nameCell = row.cells[0].textContent.toLowerCase();
+            const nameCell = $(this).find("td:first").text().toLowerCase();
 
-            // Check name filter
             if (nameFilterValue && !nameCell.includes(nameFilterValue)) {
               display = false;
             }
 
-            // Check other filters
-            Object.entries(filters).forEach(([columnIndex, values]) => {
-              const cellValue = row.cells[columnIndex].textContent.trim();
-              if (values.length > 0 && !values.includes(cellValue)) {
-                display = false;
-              }
-            });
+            $.each(
+              filters,
+              function (columnIndex, values) {
+                const cellValue = $(this)
+                  .find(`td:eq(${columnIndex})`)
+                  .text()
+                  .trim();
+                if (values.length > 0 && !values.includes(cellValue)) {
+                  display = false;
+                }
+              }.bind(this)
+            );
 
-            row.style.display = display ? "" : "none";
+            $(this).toggle(display);
           });
 
           updateAllFilterIconColors();
         }
 
+        // Add event listener for name filter input
+        $nameFilter.on("input", filterTable);
+
         // Add event listener for clearing the name filter
-        clearNameFilter.addEventListener("click", function(event) {
+        $clearNameFilter.on("click", function (event) {
           event.preventDefault();
-          nameFilter.value = "";
-          filterTable();
-          this.style.display = "none"; // Hide the clear button after clearing
+          $nameFilter.val("").trigger("input");
+          $(this).hide();
         });
 
         // Show/hide clear icon based on input content
-        nameFilter.addEventListener("input", function() {
-          clearNameFilter.style.display = this.value ? "block" : "none";
+        $nameFilter.on("input", function () {
+          $clearNameFilter.toggle(Boolean($(this).val()));
         });
-
-        // Initially hide the clear icon
-        clearNameFilter.style.display = "none";
 
         // Add event listeners for checkbox changes
-        document.querySelectorAll('.filter-options input[type="checkbox"]').forEach((checkbox) => {
-          checkbox.addEventListener('change', filterTable);
-        });
+        $(document).on(
+          "change",
+          '.filter-options input[type="checkbox"]',
+          function () {
+            filterTable();
+            updateFilterIconColor(
+              $(this).closest(".filter-options").attr("id")
+            );
+          }
+        );
 
         function updateFilterIconColor(filterOptionsId) {
-          const filterIcon = document.querySelector(`[data-filter-target="#${filterOptionsId}"]`);
-          const filterOptions = document.getElementById(filterOptionsId);
-          const checkedBoxes = filterOptions.querySelectorAll('input[type="checkbox"]:checked');
-          
-          if (checkedBoxes.length > 0) {
-            filterIcon.classList.add('active');
-          } else {
-            filterIcon.classList.remove('active');
-          }
+          const $filterIcon = $(`[data-filter-target="#${filterOptionsId}"]`);
+          const $checkedBoxes = $(`#${filterOptionsId}`).find(
+            'input[type="checkbox"]:checked'
+          );
+          $filterIcon.toggleClass("active", $checkedBoxes.length > 0);
         }
 
-        // Modify the existing checkbox event listeners
-        document.querySelectorAll('.filter-options input[type="checkbox"]').forEach((checkbox) => {
-          checkbox.addEventListener('change', function() {
-            filterTable();
-            updateFilterIconColor(this.closest('.filter-options').id);
-          });
-        });
-
-        // Add a function to update all filter icon colors
         function updateAllFilterIconColors() {
-          document.querySelectorAll('.filter-options').forEach((filterOptions) => {
-            updateFilterIconColor(filterOptions.id);
+          $(".filter-options").each(function () {
+            updateFilterIconColor($(this).attr("id"));
           });
         }
 

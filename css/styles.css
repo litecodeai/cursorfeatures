@@ -253,3 +253,15 @@ p.filter_instruction {
 .uk-table-hover > tr:hover, .uk-table-hover tbody tr:hover {
   background: #f8f8f8;
 }
+
+:not(pre)>code, :not(pre)>kbd, :not(pre)>samp {
+
+  color: #000000 !important;
+  background: #eee !important;
+  padding: 2px 5px !important;
+
+}
+
+#media-gallery {
+  display: none;
+}

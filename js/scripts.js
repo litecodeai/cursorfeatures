@@ -6,17 +6,17 @@ $(document).ready(function () {
   function generateTableRows(data) {
     data.forEach((row) => {
       const $tr = $("<tr></tr>");
-      $tr.append(`<td>${row.name}</td>`);
-      $tr.append(`<td>${row.feature_source}</td>`);
-      $tr.append(`<td>${row.entry_type}</td>`);
-      $tr.append(`<td>${row.related_functionality}</td>`);
-      $tr.append(`<td>${row.keyboard_shortcut}</td>`); // Get the HTML content
+      $tr.append(`<td data-column="name">${row.name}</td>`);
+      $tr.append(`<td data-column="keyboard-shortcut">${row.keyboard_shortcut}</td>`);
+      $tr.append(`<td data-column="screenshot">${row.screenshot}</td>`);
+      $tr.append(`<td data-column="demonstration">${row.demonstration}</td>`);
+      $tr.append(`<td data-column="feature-source">${row.feature_source}</td>`);
+      $tr.append(`<td data-column="entry-type">${row.entry_type}</td>`);
+      $tr.append(`<td data-column="description">${row.description}</td>`);
+      $tr.append(`<td data-column="related-functionality">${row.related_functionality}</td>`);
       $tr.append(
-        `<td class="centered_td"><span class="uk-label ${row.description_added.value_class}">${row.description_added.status}</span></td>`
+        `<td data-column="description-added" class="centered_td"><span class="uk-label ${row.description_added.value_class}">${row.description_added.status}</span></td>`
       );
-      $tr.append(`<td>${row.description}</td>`);
-      $tr.append(`<td>${row.screenshot}</td>`);
-      $tr.append(`<td>${row.demonstration}</td>`);
       $tableBody.append($tr);
     });
   }
@@ -113,53 +113,44 @@ $(document).ready(function () {
     // Remove 'hidden' attribute from filter options
     $(".filter-options").removeAttr("hidden");
 
-    // Filter table function
+    // Update the filterTable function
     function filterTable() {
       const nameFilterValue = $nameFilter.val().toLowerCase();
       const filters = {};
 
       $(".filter-options[data-column]").each(function () {
         const columnName = $(this).data("column");
-        const columnIndex = $headers
-          .filter(`[data-column="${columnName}"]`)
-          .index();
+        const checkedValues = $(this)
+          .find('input[type="checkbox"]:checked')
+          .map(function () {
+            return $(this).val();
+          })
+          .get();
 
-        if (columnIndex !== -1) {
-          const checkedValues = $(this)
-            .find('input[type="checkbox"]:checked')
-            .map(function () {
-              return $(this).val();
-            })
-            .get();
-
-          if (checkedValues.length > 0) {
-            filters[columnIndex] = checkedValues;
-          }
+        if (checkedValues.length > 0) {
+          filters[columnName] = checkedValues;
         }
       });
 
       $rows.each(function () {
         let display = true;
-        const nameCell = $(this).find("td:first").text().toLowerCase();
+        const $row = $(this);
 
+        // Check name filter
+        const nameCell = $row.find('td[data-column="name"]').text().toLowerCase();
         if (nameFilterValue && !nameCell.includes(nameFilterValue)) {
           display = false;
         }
 
-        $.each(
-          filters,
-          function (columnIndex, values) {
-            const cellValue = $(this)
-              .find(`td:eq(${columnIndex})`)
-              .text()
-              .trim();
-            if (values.length > 0 && !values.includes(cellValue)) {
-              display = false;
-            }
-          }.bind(this)
-        );
+        // Check other filters
+        $.each(filters, function (columnName, values) {
+          const cellValue = $row.find(`td[data-column="${columnName}"]`).text().trim();
+          if (values.length > 0 && !values.includes(cellValue)) {
+            display = false;
+          }
+        });
 
-        $(this).toggle(display);
+        $row.toggle(display);
       });
 
       updateAllFilterIconColors();

@@ -70,6 +70,20 @@
     "demonstration": "To be added"
   },
   {
+    "name": "Keyboard Shortcuts",
+    "feature_source": "VS Code",
+    "entry_type": "UI Tip",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>M</code> + <code>Ctrl</code> + <code>S</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Open VS Code Keyboard Shortcuts settings",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
     "name": "Open Command Palette",
     "feature_source": "VS Code",
     "entry_type": "Tip - UI",
@@ -80,6 +94,34 @@
       "value_class": "uk-label-success"
     },
     "description": "Opens the command palette, once open type to search for the required setting or action",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Open File",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>P</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Opens command pallet and allows you to search for a file",
+    "screenshot": "To be added",
+    "demonstration": "To be added"
+  },
+  {
+    "name": "Close File",
+    "feature_source": "VS Code",
+    "entry_type": "Tip - UI",
+    "related_functionality": "N/A",
+    "keyboard_shortcut": "<code>Ctrl</code> + <code>W</code>",
+    "description_added": {
+      "status": "YES",
+      "value_class": "uk-label-success"
+    },
+    "description": "Closes the current file",
     "screenshot": "To be added",
     "demonstration": "To be added"
   },

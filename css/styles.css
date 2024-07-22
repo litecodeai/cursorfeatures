@@ -15,14 +15,25 @@ body {
 }
 
 .table-wrapper {
-  overflow: auto;
+  overflow-x: auto;
   padding: 20px;
   box-sizing: border-box;
   height: 100vh;
+  width: 100%;
+}
+
+#myTable {
+  table-layout: fixed;
+  width: auto;
 }
 
 #myTable th,
 #myTable td {
+  width: 180px; /* Default width */
+  min-width: 180px; /* Ensure minimum width */
+  max-width: 180px; /* Ensure maximum width */
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
   border: 1px solid #e5e5e5;
   padding: 8px;
@@ -33,54 +44,67 @@ body {
   height: 40px; /* Adjust this value as needed */
 }
 
-#myTable th:nth-child(1),  /* Name */
-#myTable td:nth-child(1) {
-  min-width: 255px;
+#myTable th[data-column="name"],
+#myTable td[data-column="name"] {
+  width: 310px;
+  min-width: 310px;
+  max-width: 310px;
 }
 
-#myTable th:nth-child(2),  /* Feature Source */
-#myTable td:nth-child(2) {
+#myTable th[data-column="feature-source"],
+#myTable td[data-column="feature-source"] {
+  width: 210px;
   min-width: 210px;
+  max-width: 210px;
 }
 
-#myTable th:nth-child(3),  /* Type */
-#myTable td:nth-child(3) {
+#myTable th[data-column="entry-type"],
+#myTable td[data-column="entry-type"] {
+  width: 185px;
   min-width: 185px;
+  max-width: 185px;
 }
 
-#myTable th:nth-child(4),  /* Related Cursor Functionality */
-#myTable td:nth-child(4) {
+#myTable th[data-column="related-functionality"],
+#myTable td[data-column="related-functionality"] {
+  width: 330px;
   min-width: 330px;
+  max-width: 330px;
 }
 
-#myTable th:nth-child(5),  /* Keyboard Shortcut */
-#myTable td:nth-child(5) {
-  min-width: 280px;
+#myTable th[data-column="keyboard-shortcut"],
+#myTable td[data-column="keyboard-shortcut"] {
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
 }
 
-#myTable th:nth-child(6),  /* Description Added */
-#myTable td:nth-child(6) {
+#myTable th[data-column="description-added"],
+#myTable td[data-column="description-added"] {
+  width: 240px;
   min-width: 240px;
+  max-width: 240px;
 }
 
-#myTable th:nth-child(7),  /* Description */
-#myTable td:nth-child(7) {
+#myTable th[data-column="description"],
+#myTable td[data-column="description"] {
+  width: 1050px;
   min-width: 1050px;
+  max-width: 1050px;
 }
 
-#myTable th:nth-child(8),  /* Screenshot */
-#myTable td:nth-child(8) {
-  min-width: 180px;
+#myTable th[data-column="screenshot"],
+#myTable td[data-column="screenshot"] {
+  width: 145px;
+  min-width: 145px;
+  max-width: 145px;
 }
 
-#myTable th:nth-child(9),  /* Demonstration */
-#myTable td:nth-child(9) {
-  min-width: 180px;
-}
-
-.uk-icon-link {
-  margin-left: 15px;
-  margin-right: 10px;
+#myTable th[data-column="demonstration"],
+#myTable td[data-column="demonstration"] {
+  width: 165px;
+  min-width: 165px;
+  max-width: 165px;
 }
 
 .page-title {
@@ -177,24 +201,6 @@ p.filter_instruction {
     display: inline-block;
     margin-left: 35px;
     color: #eee;
-}
-
-.uk-drop.uk-open {
-  border: 1px solid #e7e7e7;
-  border-radius: 2px;
-}
-
-.uk-drop.uk-open {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1020;
-  box-sizing: border-box;
-  width: 200px;
-  padding: 15px;
-  background: #fff;
-  color: #666;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 .icon-filter {

@@ -38,7 +38,7 @@
       "value_class": "uk-label-success"
     },
     "description": "For code generation: launches In-Editor code generator - if existing, relevant code is highlighted it will be passed through as context",
-    "screenshot": "To be added",
+    "screenshot": "<a href='#' data-target-id='screenshot_ctrl_k_generate_in_editor' class='open-lightbox'>View</a>",
     "demonstration": "To be added"
   },
   {

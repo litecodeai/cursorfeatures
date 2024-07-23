@@ -38,7 +38,7 @@
       "value_class": "uk-label-success"
     },
     "description": "For code generation: launches In-Editor code generator - if existing, relevant code is highlighted it will be passed through as context",
-    "screenshot": "<a href='#' data-target-id='screenshot_ctrl_k_generate_in_editor' class='open-lightbox'>View</a>",
+    "screenshot": "<a href='#' data-target-id='screenshot_ctrl_k_generate_in_editor' class='open-lightbox'>View P1</a> | <a href='#' data-target-id='screenshot_ctrl_k_generate_in_editor_response' class='open-lightbox'>View P2</a>",
     "demonstration": "To be added"
   },
   {
@@ -52,7 +52,7 @@
       "value_class": "uk-label-success"
     },
     "description": "For terminal command generation: generates terminal commands in response to natural language prompt",
-    "screenshot": "To be added",
+    "screenshot": "<a href='#' data-target-id='screenshot_ctrl_k_generate_in_terminal' class='open-lightbox'>View P1</a> | <a href='#' data-target-id='screenshot_ctrl_k_generate_in_terminal_response' class='open-lightbox'>View P2</a>",
     "demonstration": "To be added"
   },
   {
@@ -72,7 +72,7 @@
   {
     "name": "Keyboard Shortcuts",
     "feature_source": "VS Code",
-    "entry_type": "UI Tip",
+    "entry_type": "Tip - UI",
     "related_functionality": "N/A",
     "keyboard_shortcut": "<code>Ctrl</code> + <code>M</code> + <code>Ctrl</code> + <code>S</code>",
     "description_added": {

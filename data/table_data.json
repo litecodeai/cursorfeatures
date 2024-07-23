@@ -11,7 +11,7 @@
     },
     "description": "For chat and code generation: launches Cursor Chat in a panel - if existing, relevant code is highlighted it will be passed through as context",
     "screenshot": "<a href='#' data-target-id='screenshot_ctrl_l_chat' class='open-lightbox'>View</a>",
-    "demonstration": "<a href='#' data-target-id='demo_ctrl_l_chat' class='open-lightbox'>To be added</a>"
+    "demonstration": "<a href='#' data-target-id='demo_ctrl_l_chat' class='open-lightbox'>View</a>"
   },
   {
     "name": "Chat: Interpreter Mode",
